@@ -1,50 +1,57 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+Version change: 0.0.0 -> 1.0.0
+Modified principles:
+- Template placeholders -> I. Intent Before Implementation
+- Template placeholders -> II. Evidence Over Assumption
+- Template placeholders -> III. Minimal, Reviewable Scope
+- Template placeholders -> IV. Quality Gates Are Non-Negotiable
+- Template placeholders -> V. Governance and Change Control
+Added sections:
+- Project Constraints
+- Development Workflow
+Removed sections:
+- None
+Follow-up TODOs:
+- None
+-->
+
+# Spec-Driven Development Template Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Intent Before Implementation
+This repository MUST be driven by explicit requirements and approved spec artifacts before code changes begin. Features MUST start with a clear problem statement, acceptance criteria, and constraints; undocumented assumptions are not valid inputs for implementation. Rationale: design drift and informal decisions are the primary sources of rework, ambiguity, and inconsistent delivery.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Evidence Over Assumption
+Every change MUST be supported by verifiable evidence, including tests, checks, or observed behavior. Claims about correctness, reliability, security, or performance MUST cite the relevant evidence or validation result. Rationale: unverified work creates silent failures and weakens trust in the repository.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Minimal, Reviewable Scope
+The project MUST prefer the smallest change that satisfies the stated intent and leaves the codebase easier to understand. Large, mixed-purpose edits are prohibited unless the rationale is explicitly documented and reviewed. Rationale: small, focused diffs reduce risk, improve maintainability, and make review quality measurable.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Quality Gates Are Non-Negotiable
+All changes MUST pass the relevant validation gates before merge or release, including syntax checks, targeted tests, and any required contract or integration validation. Failures MUST be resolved before proceeding. Rationale: quality assurance is a delivery requirement, not an optional checkpoint.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Governance and Change Control
+This project MUST record intentional policy updates and preserve accessible historical context for future contributors. Any amendment to these principles or workflows MUST include a version bump, rationale, and a review of operational impact. Rationale: governance prevents local preferences from hardening into undocumented exceptions.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Project Constraints
+- The repository MUST remain a usable template for Spec Kit-driven development workflows.
+- Documentation, prompts, and process guidance MUST match the repository’s current behavior; stale instructions are treated as defects.
+- Non-trivial work MUST be traceable to an approved spec, plan, or issue context before implementation proceeds.
+- Security-sensitive inputs, dependency changes, and externally integrated behaviors MUST be reviewed before they are accepted.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+- The default delivery sequence is specify -> plan -> tasks -> implement -> validate.
+- Every task MUST define its acceptance criteria and the validation evidence required to confirm completion.
+- Reviewers MUST verify alignment with this constitution before approving significant changes.
+- Any amendment to this constitution MUST update the version, date, and impact summary in the repository record.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes informal preferences and local exceptions for repository governance. Changes to these rules require a documented amendment, an impact review, and an explicit version increment. Compliance is reviewed during pull requests and whenever the project workflow changes.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- Amendment procedure: update the constitution, record the rationale, assess compatibility with current practice, and review the change before merge.
+- Versioning policy: MAJOR for incompatible governance or principle changes, MINOR for new or materially expanded principles, and PATCH for wording, clarification, or non-semantic refinement.
+- Compliance review expectations: contributors and reviewers MUST verify that work aligns with the active principles and required quality gates before approval.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-09-15 | **Last Amended**: 2026-09-15
